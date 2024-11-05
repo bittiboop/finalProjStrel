@@ -1,1 +1,1 @@
-#pragma once
+#include "class-products.h"

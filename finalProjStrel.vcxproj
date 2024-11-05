@@ -130,6 +130,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="class-products.h" />
     <ClInclude Include="domain.h" />
     <ClInclude Include="lib.h" />
   </ItemGroup>
