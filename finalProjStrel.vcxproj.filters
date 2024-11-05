@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="main">
+      <UniqueIdentifier>{287dc434-1970-4df7-b6cf-35d21df8d8ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="domain">
+      <UniqueIdentifier>{960abe34-ac1b-4064-bf76-be2323511da0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs">
+      <UniqueIdentifier>{1f2a0e8e-c3d2-44cd-9e85-ceccc619c9bd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
