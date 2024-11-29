@@ -10,10 +10,19 @@
     <Filter Include="libs">
       <UniqueIdentifier>{1f2a0e8e-c3d2-44cd-9e85-ceccc619c9bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{a7e2e257-b7c7-433d-bcc5-dcc490292973}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="Product.cpp">
+      <Filter>domain</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>domain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -21,6 +30,12 @@
       <Filter>libs</Filter>
     </ClInclude>
     <ClInclude Include="domain.h">
+      <Filter>domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Product.h">
+      <Filter>domain</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
       <Filter>domain</Filter>
     </ClInclude>
   </ItemGroup>
