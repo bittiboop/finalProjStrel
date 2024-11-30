@@ -3,6 +3,9 @@
 
 #include "lib.h"
 
+extern map<int, double> discounts;
+extern int totalproducts;
+
 class Product {
 public:
     virtual int getId() const = 0;
@@ -12,7 +15,6 @@ public:
     virtual void display() const = 0;
     virtual ~Product() {}
 };
- 
 
 class GeneralProduct : public Product {
     int id;
@@ -24,7 +26,7 @@ class GeneralProduct : public Product {
     string quantity;
 
 public:
-    
+    GeneralProduct(int id, string name, double price, string quantity);
 
     int getId() const override;
     string getName() const override;

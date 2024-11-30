@@ -19,10 +19,10 @@
       <Filter>main</Filter>
     </ClCompile>
     <ClCompile Include="Product.cpp">
-      <Filter>domain</Filter>
+      <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="User.cpp">
-      <Filter>domain</Filter>
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -3,13 +3,13 @@
 #include "lib.h"
 
 RegisteredCustomer::RegisteredCustomer() {
-    cout << "\n\t\t\tWelcome to Online Shopping System" << endl;
-    cout << "\t\tPlease create an Account to continue Shopping" << endl;
-    cout << "Enter Your username: ";
+    cout << "\n\t\t\tWelcome to Online Shopping Site" << endl;
+    cout << "\t\tPlease create an account to continue shopping" << endl;
+    cout << "Enter your username: ";
     getline(cin, username);
-    cout << "Enter Your Password: ";
+    cout << "Enter your Password: ";
     getline(cin, password);
-    cout << "Enter a nickname(This will be used to reset password): ";
+    cout << "Enter a nickname(This is for reseting password): ";
     getline(cin, nickname);
     cout << "Add some balance to buy products:  ";
     cin >> balance;
