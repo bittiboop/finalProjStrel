@@ -2,6 +2,7 @@
 #define USER_H
 
 #include "Product.h"
+#include "Shop.h"
 #include "lib.h"
 
 class RegisteredCustomer {
@@ -21,6 +22,7 @@ public:
     void addToCart(shared_ptr<Product> product);
     void makePurchase(const vector<shared_ptr<Product>>& cart);
     void applyDiscount(shared_ptr<Product> product, double discountPercentage);
+    void checkout();
     void showBalance() const;
     void addBalance();
     void displayUserData();
@@ -36,8 +38,15 @@ public:
     vector<shared_ptr<Product>> products;
 
     bool login();
-    void addUser();
+    void addItem();
     void viewUsers() const;
+
+    void deleteProduct();
+    void addUser();
+    
+    void viewProducts() const;
+    void updateItemDetails(int productId, const string& newName, double newPrice, const string& newQuantity);
+    void setDiscountForProducts(int productId, double discountPercentage);
 };
 
 

@@ -135,6 +135,7 @@
     <ClInclude Include="domain.h" />
     <ClInclude Include="lib.h" />
     <ClInclude Include="Product.h" />
+    <ClInclude Include="Shop.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

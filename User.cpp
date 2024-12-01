@@ -108,6 +108,33 @@ bool Administrator::login() {
     }
 }
 
+void Administrator::addItem() {
+    int id;
+    string name;
+    double price;
+    string quantity;
+    cout << "Enter Product ID: ";
+    cin >> id;
+    cin.ignore();
+    cout << "Enter Product Name: ";
+    getline(cin, name);
+    cout << "Enter Product Price: ";
+    cin >> price;
+    cin.ignore();
+    cout << "Enter Product Quantity: ";
+    getline(cin, quantity);
+
+    products.push_back(make_shared<GeneralProduct>(id, name, price, quantity));
+    cout << "Product added successfully!" << endl;
+}
+void Administrator::updateItemDetails(int productId, const string& newName, double newPrice, const string& newQuantity) {
+    for (auto& product : products) {
+        if (product->getId() == productId) {
+            product = make_shared<GeneralProduct>(productId, newName, newPrice, newQuantity);
+        }
+    }
+}
+
 void Administrator::addUser() {
     RegisteredCustomer newUser;
     users.push_back(newUser);
@@ -119,4 +146,40 @@ void Administrator::viewUsers() const {
     for (const auto& u : users) {
         cout << "Username: " << u.username << endl;
     }
+}
+
+void Administrator::deleteProduct() {
+    int productId;
+    cout << "Enter Product ID to delete: ";
+    cin >> productId;
+    cin.ignore();
+    products.erase(
+        remove_if(products.begin(), products.end(), [&](shared_ptr<Product>& p) { return p->getId() == productId; }),
+        products.end()
+    );
+    cout << "Product deleted successfully!" << endl;
+}
+
+void Administrator::addUser() {
+    RegisteredCustomer newUser;
+    users.push_back(newUser);
+    cout << "User added successfully!" << endl;
+}
+void Administrator::viewProducts() const {
+    cout << "\n\nList of Products:\n" << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "ID     Name               Price        Quantity" << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    for (const auto& p : products) {
+        p->display();
+    }
+    cout << "-----------------------------------------------------------" << endl;
+}
+void Administrator::setDiscountForProducts(int productId, double discountPercentage) {
+    if (discountPercentage < 0 || discountPercentage > 100) {
+        cout << "Invalid discount percentage! Please enter a value between 0 and 100." << endl;
+        return;
+    }
+    discounts[productId] = discountPercentage;
+    cout << "Discount set successfully for product ID: " << productId << endl;
 }

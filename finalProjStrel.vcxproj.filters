@@ -38,5 +38,8 @@
     <ClInclude Include="User.h">
       <Filter>domain</Filter>
     </ClInclude>
+    <ClInclude Include="Shop.h">
+      <Filter>domain</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
