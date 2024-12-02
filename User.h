@@ -5,6 +5,10 @@
 #include "Shop.h"
 #include "lib.h"
 
+extern double totalPrice;
+extern map<int, double> discounts;
+extern int totalproducts;
+
 class RegisteredCustomer {
     string nickname;
     string password;
@@ -31,7 +35,7 @@ public:
 
 class Administrator {
     string adminUsername = "admin";
-    string adminPassword = "admin123";
+    string adminPassword = "admin123456";
 
 public:
     vector<RegisteredCustomer> users;
@@ -48,7 +52,4 @@ public:
     void updateItemDetails(int productId, const string& newName, double newPrice, const string& newQuantity);
     void setDiscountForProducts(int productId, double discountPercentage);
 };
-
-
-
 #endif
