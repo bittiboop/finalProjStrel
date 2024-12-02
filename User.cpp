@@ -42,6 +42,39 @@ void RegisteredCustomer::applyDiscount(shared_ptr<Product> product, double disco
     // applying discount
 }
 
+void RegisteredCustomer::checkout() {
+    string checkpass;
+trypassagain:
+    cout << endl << "Enter your password to confirm Checkout or (Type 0 to return Main Menu): ";
+    getline(cin, checkpass);
+    if (checkpass == "0") {
+        returns = false;
+    }
+    else if (checkpass == password) {
+        if (balance < totalPrice) {
+            cout << "\nInsufficient Balance!!" << endl;
+            cout << "Please add balance from (My Account and balance)" << endl << endl;
+            returns = false;
+        }
+        else {
+            balance -= totalPrice;
+            cout << "\n\n\t\t-------------------------------------------" << endl;
+            cout << "\t\t\t    Purchase successful !!! " << endl;
+            cout << "\t\t     Your current balance is " << balance << " Hrivnas " << endl;
+            cout << "\t\t-------------------------------------------\n\n\n" << endl;
+            cout << "\t\t******************************************* ";
+            cout << endl << "\t\t* Thank you for shopping with Online Shopping Site *" << endl;
+            cout << "\t\t*      We hope to see you again      *" << endl;
+            cout << "\t\t*******************************************\n\n\n" << endl;
+            returns = true;
+        }
+    }
+    else {
+        cout << endl << "Wrong Password!!! " << endl;
+        cout << "If forgot password please go my acount and balance to reset password " << endl;
+        goto trypassagain;
+    }
+}
 
 void RegisteredCustomer::showBalance() const {
     cout << "\n\t\t\t  Your balance is " << balance << " Hrivnas" << endl;
@@ -160,21 +193,6 @@ void Administrator::deleteProduct() {
     cout << "Product deleted successfully!" << endl;
 }
 
-void Administrator::addUser() {
-    RegisteredCustomer newUser;
-    users.push_back(newUser);
-    cout << "User added successfully!" << endl;
-}
-void Administrator::viewProducts() const {
-    cout << "\n\nList of Products:\n" << endl;
-    cout << "-----------------------------------------------------------" << endl;
-    cout << "ID     Name               Price        Quantity" << endl;
-    cout << "-----------------------------------------------------------" << endl;
-    for (const auto& p : products) {
-        p->display();
-    }
-    cout << "-----------------------------------------------------------" << endl;
-}
 void Administrator::setDiscountForProducts(int productId, double discountPercentage) {
     if (discountPercentage < 0 || discountPercentage > 100) {
         cout << "Invalid discount percentage! Please enter a value between 0 and 100." << endl;

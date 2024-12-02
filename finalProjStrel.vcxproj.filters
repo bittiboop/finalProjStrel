@@ -24,6 +24,9 @@
     <ClCompile Include="User.cpp">
       <Filter>Core</Filter>
     </ClCompile>
+    <ClCompile Include="Shop.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib.h">

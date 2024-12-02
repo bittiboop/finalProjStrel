@@ -1,7 +1,8 @@
 #include "Product.h"
 #include "lib.h"
 
-
+GeneralProduct::GeneralProduct(int id, string name, double price, string quantity)
+    : id(id), name(name), price(price), quantity(quantity) {}
 
 int GeneralProduct::getId() const
 {
