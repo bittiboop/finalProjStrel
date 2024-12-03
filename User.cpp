@@ -201,3 +201,14 @@ void Administrator::setDiscountForProducts(int productId, double discountPercent
     discounts[productId] = discountPercentage;
     cout << "Discount set successfully for product ID: " << productId << endl;
 }
+
+void Administrator::viewProducts() const {
+    cout << "\n\nList of Products:\n" << endl;
+    cout << "-----------------------------------------------------------" << endl;
+    cout << "ID     Name               Price        Quantity" << endl;
+    cout << "-----------------------------------------------------------" << endl;
+	for (const auto& product : products) {
+		product->display();
+	}
+    cout << "-----------------------------------------------------------" << endl;
+}

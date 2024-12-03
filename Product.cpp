@@ -29,8 +29,8 @@ void displayProducts(const vector<shared_ptr<Product>>& products) {
     cout << "-----------------------------------------------------------" << endl;
     cout << "ProductID     Name               Price        Quantity" << endl;
     cout << "-----------------------------------------------------------" << endl;
-    for (const auto& p : products) {
-        p->display();
-    }
+	for (const auto& product : products) {
+		product->display();
+	}
     cout << "-----------------------------------------------------------" << endl;
 }

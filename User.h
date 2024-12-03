@@ -48,8 +48,8 @@ public:
     void deleteProduct();
     void addUser();
     
-    void viewProducts() const;
     void updateItemDetails(int productId, const string& newName, double newPrice, const string& newQuantity);
     void setDiscountForProducts(int productId, double discountPercentage);
+    void viewProducts() const;
 };
 #endif

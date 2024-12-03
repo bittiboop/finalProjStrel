@@ -93,13 +93,14 @@ int main()
                 cout << "3. Delete Product" << endl;
                 cout << "4. Add Item" << endl;
                 cout << "5. Set Discount" << endl;
-                cout << "6. Return to Main Menu" << endl;
+				cout << "6. View Products" << endl;
+                cout << "7. Return to Main Menu" << endl;
                 cout << "Enter an option: ";
 				cin >> option;
 				cin.ignore();
 
 
-                if (option == 6)
+                if (option == 7)
                 {
                     break;
                 }
@@ -129,6 +130,9 @@ int main()
                     cin >> discountPercentage;
                     admin.setDiscountForProducts(productId, discountPercentage);
                     break;
+				case 6:
+					admin.viewProducts();
+					break;
 				default:
 					cout << "Invalid Choice!!!" << endl;
                 }
